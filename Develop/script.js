@@ -63,7 +63,7 @@ $("#currentDay").text(moment().format("dddd MMMM Do"));
 function timeBlockColor() {
   //shows current hour in 24-hour format
   var currentHour = moment().hours();
-//   console.log(currentHour)
+  console.log(currentHour)
 
 //   $(".time-block").each(function () {
     //converts id string to int
@@ -79,10 +79,10 @@ function timeBlockColor() {
     // } else {
     //    $("this").addClass("future");
     // }
-    for(var i = 9; i < 20; i++){
-        if(i < hour){
+    for(var i = 9; i <= 20; i++){
+        if(i < currentHour){
             $('#' + i).addClass("past");
-        } else if(i === parseInt(hour)){
+        } else if(i === parseInt(currentHour)){
             $('#' + i).addClass("present");
         } else {
             $('#' + i).addClass("future");
