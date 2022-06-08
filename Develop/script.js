@@ -65,25 +65,31 @@ function timeBlockColor() {
   var currentHour = moment().hours();
 //   console.log(currentHour)
 
-  $(".time-block").each(function () {
+//   $(".time-block").each(function () {
     //converts id string to int
     var hour = parseInt($(this).attr("id"));
     //console.log(hour)
     //this references each time block
     // console.log(this)
 
-    if (hour > currentHour) {
-        // debugger;
-       $("this").addClass("past");
-    } else if (currentHour === hour) {
-        // debugger;
-       $("this").addClass("present");
-    } else {
-        // debugger;
-       $("this").addClass("future");
+    // if (hour > currentHour) {
+    //    $("this").addClass("past");
+    // } else if (currentHour === hour) {
+    //    $("this").addClass("present");
+    // } else {
+    //    $("this").addClass("future");
+    // }
+    for(var i = 9; i < 20; i++){
+        if(i < hour){
+            $('#' + i).addClass("past");
+        } else if(i === parseInt(hour)){
+            $('#' + i).addClass("present");
+        } else {
+            $('#' + i).addClass("future");
+        }
     }
-  });
-}
+  };
+// }
 
 saveBtn.on("click", function () {
   var time = $(this).siblings(".hour").text();
@@ -105,3 +111,5 @@ function usePlanner(){
 
 timeBlockColor();
 usePlanner();
+
+//how do I keep the text displayed in each 
