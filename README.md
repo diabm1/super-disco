@@ -1,4 +1,4 @@
-# Work Day Scheduler Starter Code
+# Work Day Scheduler
 
 ![alt text](./Develop/asset/img/workday-scheduler.png)
 
