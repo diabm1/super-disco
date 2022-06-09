@@ -87,8 +87,7 @@ function timeBlockColor() {
     } else {
       $("#" + i).addClass("future");
     }
-    var hour = $(this).text();
-    var hourValue = localStorage.getItem(hour);
+    var hourValue = localStorage.getItem("hour " + i);
     console.log(hourValue);
     if (hourValue) {
       $("#" + i).val(hourValue);
@@ -109,7 +108,7 @@ saveBtn.on("click", function () {
   console.log(value)
 
   if(value.length){
-      localStorage.setItem("hour " + input, value);
+      localStorage.setItem("hour" + input, value);
   }
 });
 
